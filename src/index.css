@@ -1,0 +1,76 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+}
+.text-shadow-pink {
+  text-shadow: 0 0 8px #ffc0cb;
+}
+
+.text-shadow-blue {
+  text-shadow: 0 0 8px #add8e6;
+}
+
+.text-shadow-green {
+  text-shadow: 0 0 8px #b0f2b6;
+}
+
+.text-shadow-yellow {
+  text-shadow: 0 0 8px #fff9a5;
+}
+
+.text-shadow-purple {
+  text-shadow: 0 0 8px #dabfff;
+}
+
+.text-shadow-orange {
+  text-shadow: 0 0 8px #ffd6a5;
+}
+@import "tailwindcss";
+
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
+
+@theme inline {
+  --animate-aurora: aurora 60s linear infinite;
+  @keyframes aurora {
+    from {
+      background-position: 50% 50%, 50% 50%;
+    }
+    to {
+      background-position: 350% 50%, 350% 50%;
+    }
+  }
+}
+
+.no-visible-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.no-visible-scrollbar::-webkit-scrollbar {
+  display: none;
+}
